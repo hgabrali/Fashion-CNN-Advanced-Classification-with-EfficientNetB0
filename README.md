@@ -1,3 +1,4 @@
+<img width="1155" height="628" alt="image" src="https://github.com/user-attachments/assets/f3091afa-e311-4394-81a3-a4624cf1a66b" />
 
 This repository outlines the transition from basic Artificial Neural Networks (ANN) to Convolutional Neural Networks (CNNs) and demonstrates the implementation of Transfer Learning  using the EfficientNet architecture to solve the Fashion MNIST classification task.
 
