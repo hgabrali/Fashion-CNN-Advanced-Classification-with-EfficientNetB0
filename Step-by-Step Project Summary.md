@@ -3,7 +3,7 @@
 
 # 🛠️ Project Refinement: Transitioning to Professional Engineering Standards
 
-This project has been refined to bridge the gap between introductory course materials and professional engineering standards. The following technical analysis outlines the critical components integrated into the updated pipeline to ensure compliance with the **OSEMN framework** and industry-grade **CRISP-DM** standards.
+This project has been refined to bridge the gap between introductory course materials and professional engineering standards. The following technical analysis outlines the critical components integrated into the updated pipeline to ensure compliance with the [**OSEMN framework**](https://www.youtube.com/watch?v=pNnNzLycra4) and industry-grade **CRISP-DM** standards.
 
 ---
 
