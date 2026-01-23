@@ -94,6 +94,7 @@ To resolve performance bottlenecks and improve generalization, the following tec
 
 **4.Statistical Distributions & Class Correlation Heatmap:**
 
+<img width="727" height="628" alt="image" src="https://github.com/user-attachments/assets/1ca7915d-2761-4ecb-bbd2-aac1353d7cf4" />
 
 
 
