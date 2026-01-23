@@ -96,6 +96,7 @@ To resolve performance bottlenecks and improve generalization, the following tec
 
 <img width="727" height="628" alt="image" src="https://github.com/user-attachments/assets/1ca7915d-2761-4ecb-bbd2-aac1353d7cf4" />
 
+<img width="1266" height="553" alt="image" src="https://github.com/user-attachments/assets/1227e087-23ce-4d03-86e2-5abf79ae9f43" />
 
 
 ---
