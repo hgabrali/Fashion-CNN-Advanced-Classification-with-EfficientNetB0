@@ -106,39 +106,54 @@ To resolve performance bottlenecks and improve generalization, the following tec
 
 **Data Representative Integrity:** Dataset scaling complete. Train size: 60000, Test size: 10000
 
+**Advanced Normalization:** Advanced Normalization successfully integrated into the pipeline.
 
-**Advanced Normalization:**
+**Stochastic Data Augmentation:** Stochastic Data Augmentation layer initialized and ready for integration.
 
-**Stochastic Data Augmentation:**
+**Visual Examples of Augmented Training Samples:**
 
-![Visual Examples of Augmented Training Samples]()
+* To maintain **Experimental Traceability**, it is vital to visualize the output of your Stochastic Data Augmentation layer before starting the training process.
+* This ensures that the transformations are not so aggressive that they destroy the Semantic Integrity of the images (e.g., rotating a shoe so much it no longer looks like footwear).
+
+<img width="1016" height="337" alt="image" src="https://github.com/user-attachments/assets/ba688fc4-d9be-41c8-bbac-518b18fc0a55" />
+
+<img width="1001" height="319" alt="image" src="https://github.com/user-attachments/assets/5a777bed-331c-46f3-9fe6-7d99c8eff893" />
+
+<img width="983" height="315" alt="image" src="https://github.com/user-attachments/assets/4eb49d92-f243-4513-872b-f21c64448a5d" />
 
 ---
 
 ### 📈 Step 4: Establishing a Scientific Baseline — [New Step]
 
-![Comparison Table: Baseline vs. Expected Results]()
+<img width="578" height="335" alt="image" src="https://github.com/user-attachments/assets/4b694b44-f42b-4498-b174-0fcdf3e8ffa9" />
+
+
+**Comparison Table: Baseline vs. Expected Results:**
+
+<img width="519" height="153" alt="image" src="https://github.com/user-attachments/assets/ae09e62f-9403-466d-8645-6629b06d859b" />
+
 
 ---
 
 ### 🧬 Step 5: Transfer Learning Strategy: Feature Extraction — [Original Step 3]
 
-
-![Transfer Learning Architectural Diagram]()
+* **"Trainable parameters: 0"** is exactly the result we seek at this stage.
+* This confirms that the 5.3 million parameters of the EfficientNetB0 backbone are successfully "locked," ensuring that our initial training phase will only optimize the new classification head we are about to build.
 
 ---
 
 ### 🏗️ Step 6: Architectural Refinement: Building the Custom Head — [Original Step 4]
 
 
-![Custom Model Architecture Visualization]()
+<img width="536" height="301" alt="image" src="https://github.com/user-attachments/assets/8dd502ac-b268-4e0a-9cfc-9f4b9d25de84" />
+
 
 ---
 
 ### 🖥️ Step 7: Model Training & Diagnostic Monitoring — [Original Step 5]
 
 
-![Training Loss and Accuracy Curves]()
+
 
 ---
 
@@ -187,4 +202,61 @@ To resolve performance bottlenecks and improve generalization, the following tec
 ### 📊 Step 14: Final Reporting & Knowledge Transfer (The "iNterpret" of OSEMN)
 
 
-![Final Performance Summary Table]()
+# Final Technical Report: Production-Ready Fashion Classification Engine
+
+---
+
+## 1. Project Overview & Business Value
+
+**Objective:** The primary mission of this project was to engineer a transition from a failed prototype, which demonstrated a baseline accuracy of only $10.5\%$, into a highly optimized, production-ready fashion classification engine.
+
+**Business Impact:** The finalized model establishes a reliable, automated tagging infrastructure for e-commerce platforms. This solution significantly reduces manual categorization labor costs and enhances search relevance by providing high-precision identification of various apparel categories.
+
+---
+
+## 2. Architectural Justification
+
+### EfficientNetB0 vs. Alternatives
+We selected **EfficientNetB0** over traditional architectures like ResNet or VGG. The decision was driven by EfficientNet's **Compound Scaling** method, which uniformly scales depth, width, and resolution.  
+* **Performance:** It provides superior feature extraction capabilities.
+* **Efficiency:** It maintains a lower parameter count, ensuring minimal memory overhead and low latency for the **FastAPI** deployment environment.
+
+
+
+### Transfer Learning Strategy
+By utilizing **ImageNet** weights, the model inherited complex, pre-trained edge detectors and spatial hierarchies. Learning these features from scratch would have required significantly more than the available $60,000$ samples. This strategy accelerated convergence and improved final performance metrics.
+
+---
+
+## 3. Post-Mortem Analysis (Based on Step 9)
+
+### The "Similarity Cluster" Failure
+Detailed error analysis revealed that $70\%$ of misclassifications occurred between the "Shirt" and "Pullover" categories. This is directly attributed to a high **morphological correlation** ($>0.85$) identified during the Exploratory Data Analysis (EDA) phase. The visual boundaries between these classes are inherently ambiguous at low resolutions.
+
+### Feature Noise
+Specific errors within the footwear category were traced back to the **Input Adaptation** phase. When upscaling the source data from $28 \times 28$ pixels to $224 \times 224$ pixels, the **bilinear interpolation** process inadvertently smoothed out crucial textures, leading to "feature noise" that confused the dense classification layers.
+
+---
+
+## 4. Model Limitations & Future Iterations
+
+### Resolution Ceiling
+The model's performance is currently capped by the low-resolution nature of the source data ($28 \times 28$). No mathematical upscaling method can fully recover high-frequency spatial details once they are lost or omitted during data capture.
+
+### Future Scope
+To surpass the $95\%$ accuracy barrier, we recommend the following strategies:
+* **Ensemble Modeling:** Combining the predictions of EfficientNet with a specialized, smaller CNN optimized for high-resolution patches.
+* **Data Enrichment:** Gathering higher-resolution source imagery ($224 \times 224$ native or higher) to provide the model with a richer feature set.
+
+
+---
+
+## 💎 Key Takeaways for Stakeholders
+
+* **Engineering Rigor:** Adherence to the **OSEMN framework** was the catalyst for increasing the model's accuracy from a baseline of $10.5\%$ to over $94\%$.
+* **Data Integrity:** Transitioning to the full $60,000$ sample dataset was identified as the single most impactful adjustment for achieving model convergence.
+* **Explainability:** Utilizing **Grad-CAM** visualizations, we have mathematically and visually verified that the model makes classification decisions based on relevant apparel features rather than background noise or artifacts.
+
+
+
+---
