@@ -73,9 +73,6 @@ To resolve performance bottlenecks and improve generalization, the following tec
 
 ### 🛠️ Step 1: Environment Setup & Data Acquisition
 
-
-![Environment Configuration and Data Stream Diagram]()
-
 ---
 
 ### 🔍 Step 2: Exploratory Data Analysis (EDA) — [New Step]
