@@ -77,8 +77,25 @@ To resolve performance bottlenecks and improve generalization, the following tec
 
 ### 🔍 Step 2: Exploratory Data Analysis (EDA) — [New Step]
 
+**1. Class Distribution Visualization:**
 
-![Statistical Distribution Plots and Correlation Heatmaps]()
+
+<img width="1153" height="553" alt="image" src="https://github.com/user-attachments/assets/cd8242b4-dafa-44b6-8296-d1db0b2d87dc" />
+
+
+**2. Feature Visualization:**
+
+<img width="1410" height="594" alt="image" src="https://github.com/user-attachments/assets/485b3233-0072-4943-9773-773be0dfb1ee" />
+
+
+**3. Pixel Intensity Analysis:**
+
+<img width="1057" height="519" alt="image" src="https://github.com/user-attachments/assets/0cfb7df2-58f8-45e8-ad56-9873378f7271" />
+
+**4.Statistical Distributions & Class Correlation Heatmap:**
+
+
+
 
 ---
 
