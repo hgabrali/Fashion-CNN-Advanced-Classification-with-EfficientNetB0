@@ -64,7 +64,72 @@ Before modeling, we perform a deep dive into the data characteristics:
 * **Rigorous Error Analysis:** Generate a **Confusion Matrix** to identify specific misclassification clusters (e.g., "Pullover" vs. "Coat") and determine if the failure is due to class similarity or feature noise.
 
 
+---
 
+### 🧠 Step 10: Model Interpretability (Explainable AI - XAI)
+
+**Action:**
+Implement **Grad-CAM (Gradient-weighted Class Activation Mapping)** to visualize which pixels the Convolutional Neural Network (CNN) is "focusing on" when making a specific prediction.
+
+**Engineering Purpose:**
+In professional and industrial settings, raw accuracy is insufficient. We must validate that the model is not focusing on "noise" or irrelevant background pixels. The objective is to ensure the architecture is correctly identifying the specific **morphological features** of the clothing items to justify its classification.
+
+![Visual representation of Grad-CAM heatmaps on image data]()
+
+---
+
+### ⚙️ Step 11: Hyperparameter Optimization (Automated Tuning)
+
+**Action:**
+Transition from manual trial-and-error tuning to an automated optimization framework such as **KerasTuner** or **Optuna**.
+
+**Technical Depth:**
+Systematically explore the hyperparameter search space to identify the optimal configuration for the following variables:
+* **Learning Rate**
+* **Dropout Rate**
+* **Number of neurons** in the Dense layers
+
+The ultimate goal is to maximize the **F1-Score** beyond the initial baseline performance through rigorous search algorithms (e.g., Bayesian Optimization or Hyperband).
+
+![Graph showing hyperparameter search space and optimization curves]()
+
+---
+
+### 💾 Step 12: Model Serialization & Production Readiness
+
+**Action:**
+Save the trained model using the **TensorFlow SavedModel** format or **H5**, and define a comprehensive **versioning strategy**.
+
+**Engineering Standard:**
+Following the industry maxim, *"Code is temporary, models are permanent,"* it is critical to ensure the model is portable. This ensures the model can be successfully reloaded in diverse production environments without requiring access to the original training source code.
+
+---
+
+### 🚀 Step 13: Deployment & Inference Pipeline
+
+**Action:**
+Develop a lightweight **Inference Script** or a **REST API** using frameworks such as **FastAPI** or **Flask** to serve the model to end-users or downstream applications.
+
+**Key Metrics:**
+* **Inference Latency:** Calculate the time (in milliseconds) required for a single prediction.
+* **Throughput:** Measure the number of requests the pipeline can handle concurrently.
+
+> **Note:** In a production environment, a model that achieves 99% accuracy but requires 10 seconds to respond is often considered useless for real-time applications.
+
+![Architecture diagram of a REST API serving a Machine Learning model]()
+
+---
+
+### 📊 Step 14: Final Reporting & Knowledge Transfer (The "Interpret" of OSEMN)
+
+**Action:**
+Summarize all project findings in a comprehensive **Technical Report**, with a primary focus on **Business Value** and **Model Limitations**.
+
+**Content Requirements:**
+* **Architectural Justification:** Document the rationale behind specific choices (e.g., selecting **EfficientNet** over **ResNet**).
+* **Post-Mortem Analysis:** Provide a detailed "Post-Mortem" based on the **Error Analysis** conducted in Step 9 to guide future iterations and stakeholders.
+
+---
 ---
 
 ## 📊 Pipeline Comparison Summary
