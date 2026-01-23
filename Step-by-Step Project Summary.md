@@ -160,21 +160,21 @@ To resolve performance bottlenecks and improve generalization, the following tec
 ### 🎯 Step 8: Strategic Fine-Tuning — [Original Step 6]
 
 
-![Fine-Tuning Layer Visualization]()
+
 
 ---
 
 ### 📋 Step 9: Comprehensive Evaluation & Error Analysis — [Original Step 7]
 
 
-![Confusion Matrix and Precision-Recall Curves]()
+
 
 ---
 
 ### 🧠 Step 10: Model Interpretability (Explainable AI - XAI)
 
 
-![Grad-CAM Saliency Maps]()
+
 
 ---
 
@@ -188,14 +188,14 @@ To resolve performance bottlenecks and improve generalization, the following tec
 ### 💾 Step 12: Model Serialization & Production Readiness
 
 
-![Model Versioning and Serialization Flowchart]()
+
 
 ---
 
 ### 🚀 Step 13: Deployment & Inference Pipeline
 
 
-![API Architecture and Deployment Schema]()
+
 
 ---
 
